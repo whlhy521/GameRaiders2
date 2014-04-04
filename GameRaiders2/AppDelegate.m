@@ -19,6 +19,7 @@
 {
     [self assignNavigationBar];
 //    [self insertAd];
+    self.isShowLoadingView = YES;
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     
     SlideNavigationController *snController = [SlideNavigationController sharedInstance];
@@ -54,7 +55,10 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [self appStatistics];
-    [self addLoadingView];
+    if (self.isShowLoadingView) {
+        [self addLoadingView];
+        self.isShowLoadingView = NO;
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
