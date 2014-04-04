@@ -26,18 +26,20 @@
                 <viewController storyboardIdentifier="MainViewController" id="LN6-Bo-kQP" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c67-Bd-Gya">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MainViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h4P-Bd-Pvv">
-                                <rect key="frame" x="80" y="266" width="160" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="qCr-gC-wXS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uRv-El-VrE"/>
+                    <navigationItem key="navigationItem" id="n5y-QM-02e"/>
+                    <connections>
+                        <outlet property="mainWebView" destination="qCr-gC-wXS" id="WoA-b2-BIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1m-GT-LwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,32 +56,32 @@
                             <view contentMode="scaleToFill" id="5fq-mP-aIR" userLabel="splitLine">
                                 <rect key="frame" x="15" y="64" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="jG6-Fo-QP4" userLabel="splitLine">
                                 <rect key="frame" x="15" y="109" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="KiJ-6t-Bbw" userLabel="splitLine">
                                 <rect key="frame" x="15" y="154" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="X1v-Od-tab" userLabel="splitLine">
                                 <rect key="frame" x="15" y="199" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="vmf-ud-Ki9" userLabel="splitLine">
                                 <rect key="frame" x="15" y="244" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="5qD-47-0HG" userLabel="splitLine">
                                 <rect key="frame" x="15" y="287" width="228" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.11372549019607843" green="0.39215686274509803" blue="0.59607843137254901" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28170620437956206" green="0.39880816605839414" blue="0.52988138686131392" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" id="KDe-Nq-p3w" userLabel="home">
                                 <rect key="frame" x="15" y="65" width="228" height="44"/>
@@ -192,7 +194,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.12549019607843137" green="0.43529411764705883" blue="0.66274509803921566" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.12549019607843137" green="0.39215686274509803" blue="0.66274509803921566" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="aboutView" destination="XBG-Ed-6vr" id="okR-ea-X1H"/>

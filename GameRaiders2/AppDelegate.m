@@ -12,12 +12,13 @@
 #import "SlideNavigationController.h"
 #import "SlideNavigationContorllerAnimatorScale.h"
 #import <AdSupport/AdSupport.h>
-
+#import "StrategyBubbleAdView.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self assignNavigationBar];
+//    [self insertAd];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     
     SlideNavigationController *snController = [SlideNavigationController sharedInstance];
@@ -53,6 +54,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [self appStatistics];
+    [self addLoadingView];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -103,12 +105,36 @@
     httpRequest.timeOutSeconds = 10;
     [httpRequest startAsynchronous];
 }
+/**
+ *  自定义启动页
+ */
+- (void)addLoadingView
+{
+    UIView *loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] lastObject];
+    
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    [keyWindow.rootViewController.view insertSubview:loadingView atIndex:100];
+    
+    [self performSelector:@selector(removeLodingView:) withObject:loadingView afterDelay:2.3];
+}
+- (void)removeLodingView:(UIView *)loadingView
+{
+    [UIView animateWithDuration:0.5f animations:^{
+        loadingView.alpha = 0.3;
+    } completion:^(BOOL finished) {
+        [loadingView removeFromSuperview];
+    }];
+}
 
 #pragma mark - insert ad request delegate
 
 - (void)requestFinished1:(ASIHTTPRequest *)request
 {
-    NSLog(@"requestFinished1");
+    NSData *responseData = request.responseData;
+    NSDictionary *data = nil;
+    data = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    StrategyBubbleAdView *bubbleAdView = [[StrategyBubbleAdView alloc] initWithFrame:[[UIApplication sharedApplication] keyWindow].frame text:[data objectForKey:@"ad_text"] imageURL:[data objectForKey:@"ad_url"] downloadURL:[data objectForKey:@"appstore_url"] showBtn:[[data objectForKey:@"is_close"] boolValue] showAd:[[data objectForKey:@"status"] boolValue]];
 }
 - (void)requestFailed1:(ASIHTTPRequest *)request
 {

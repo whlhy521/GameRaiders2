@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSString *urlString = [[NSBundle mainBundle] pathForResource:@"single" ofType:@"html" inDirectory:@"single"];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:urlString];
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:url]];
+
 }
 
 - (void)didReceiveMemoryWarning

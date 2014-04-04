@@ -10,5 +10,7 @@
 #import "SlideNavigationController.h"
 
 @interface MainViewController : UIViewController<SlideNavigationControllerDelegate>
-
+{
+    IBOutlet UIWebView *mainWebView;
+}
 @end
